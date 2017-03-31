@@ -2,6 +2,9 @@ var http = require("http");
 var fs = require("fs");
 var queryString = require("querystring");
 var fileVar = "./doc_root/SampleTweets.json";
+var uneditedVar = "\r\n      {\r\n         \"text\":\"THE WORKSHOP TWITTER MICROSERVICE SERVER.JS CODE HAS NOT BEEN EDITED.\",\r\n         \"" +
+	"user\":{\r\n            \"screen_name\":\"**\"\r\n         },\r\n         \"entities\":{\r\n            " + 
+	"\"hashtags\":[{\r\n               \"text\":\"**\"}]},\r\n         \"timestamp_ms\":\"0000000000000\"\r\n      }";
 var jsonObj;
 
 // READ UNFILTERED JSON FILE AND PARSE IT INTO A JSON OBJECT.
@@ -33,11 +36,12 @@ response.writeHead(200, {
         }       
     }
     // GENERATE RETURN JSON OBJECT.
-    response.write("{ \"tweets\" : [");  
-/*********************************************************    
-UNCOMMENT THE CODE SECTION BELOW FOR THE WORKSHOP - THIS SECTION ASSEMBLES AND RETURNS THE TWITTER DATA FOR ALL TWEETS THAT COMPLY WITH THE HASHTAG FILTER.      
-*********************************************************/
+    response.write("{\r\n   \"tweets\":[");  
+    /*********************************************************    
+    UNCOMMENT THE CODE SECTION BELOW FOR THE WORKSHOP - THIS SECTION ASSEMBLES AND RETURNS THE TWITTER DATA FOR ALL TWEETS THAT COMPLY WITH THE HASHTAG FILTER.      
+    *********************************************************/
     /*
+    uneditedVar = "";    
     var firstRow = true;
     for (var k in jsonObj.tweets) { 
       if (jsonObj.tweets[k].entities) {
@@ -56,10 +60,11 @@ UNCOMMENT THE CODE SECTION BELOW FOR THE WORKSHOP - THIS SECTION ASSEMBLES AND R
       }
     }   
     */
-/*********************************************************    
-UNCOMMENT THE CODE SECTION ABOVE FOR THE WORKSHOP.    
-*********************************************************/       
-    response.write("]}");        
+    /*********************************************************    
+    UNCOMMENT THE CODE SECTION ABOVE FOR THE WORKSHOP.    
+    *********************************************************/  
+    response.write(uneditedVar); // DOES NOTHING IF SECTION ABOVE IS UNCOMMENTED       
+    response.write("\r\n   ]\r\n}");        
     response.end();
 }).listen(8003);
 
