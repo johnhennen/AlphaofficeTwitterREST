@@ -37,6 +37,7 @@ response.writeHead(200, {
 /*********************************************************    
 UNCOMMENT THE CODE SECTION BELOW FOR THE WORKSHOP - THIS SECTION ASSEMBLES AND RETURNS THE TWITTER DATA FOR ALL TWEETS THAT COMPLY WITH THE HASHTAG FILTER.      
 *********************************************************/
+    /*
     var firstRow = true;
     for (var k in jsonObj.tweets) { 
       if (jsonObj.tweets[k].entities) {
@@ -54,7 +55,7 @@ UNCOMMENT THE CODE SECTION BELOW FOR THE WORKSHOP - THIS SECTION ASSEMBLES AND R
         }
       }
     }   
-    
+    */
 /*********************************************************    
 UNCOMMENT THE CODE SECTION ABOVE FOR THE WORKSHOP.    
 *********************************************************/       
