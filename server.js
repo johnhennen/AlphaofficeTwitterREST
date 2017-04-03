@@ -66,7 +66,7 @@ response.writeHead(200, {
     response.write(uneditedVar); // DOES NOTHING IF SECTION ABOVE IS UNCOMMENTED       
     response.write("\r\n   ]\r\n}");        
     response.end();
-}).listen(8003);
+}).listen(process.env.PORT || 8003);
 
 
 
